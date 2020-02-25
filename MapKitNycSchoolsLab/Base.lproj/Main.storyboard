@@ -36,5 +36,61 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="108.48214285714285"/>
         </scene>
+        <!--School Detail View Controller-->
+        <scene sceneID="Unh-oh-oqH">
+            <objects>
+                <viewController id="szH-gu-wkl" customClass="SchoolDetailViewController" customModule="MapKitNycSchoolsLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xsM-r4-9xr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntt-2g-Efa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vlm-Cq-6TA">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gv-6Q-z84">
+                                            <rect key="frame" x="40" y="100" width="334" height="20.5"/>
+                                            <color key="backgroundColor" red="0.81153625249862671" green="0.94877928495407104" blue="0.95098072290420532" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="School Overview" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qep-6x-t8M">
+                                            <rect key="frame" x="100" y="160.5" width="214" height="205"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Qep-6x-t8M" firstAttribute="height" secondItem="vlm-Cq-6TA" secondAttribute="height" multiplier="0.228795" id="1Fo-HO-rlj"/>
+                                        <constraint firstItem="Qep-6x-t8M" firstAttribute="top" secondItem="3Gv-6Q-z84" secondAttribute="bottom" constant="40" id="7gY-RZ-bIS"/>
+                                        <constraint firstAttribute="trailing" secondItem="3Gv-6Q-z84" secondAttribute="trailing" constant="40" id="Mou-ay-tnF"/>
+                                        <constraint firstItem="Qep-6x-t8M" firstAttribute="leading" secondItem="vlm-Cq-6TA" secondAttribute="leading" constant="100" id="O9m-Cu-Mgw"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qep-6x-t8M" secondAttribute="trailing" constant="100" id="Y74-M7-HF1"/>
+                                        <constraint firstItem="3Gv-6Q-z84" firstAttribute="top" secondItem="vlm-Cq-6TA" secondAttribute="top" constant="100" id="pHL-FQ-MpY"/>
+                                        <constraint firstItem="3Gv-6Q-z84" firstAttribute="leading" secondItem="vlm-Cq-6TA" secondAttribute="leading" constant="40" id="z3z-ZB-qff"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ntt-2g-Efa" secondAttribute="bottom" id="1U1-kW-2ul"/>
+                            <constraint firstItem="ntt-2g-Efa" firstAttribute="trailing" secondItem="EcN-ZM-DhT" secondAttribute="trailing" id="f8A-k2-sJd"/>
+                            <constraint firstItem="ntt-2g-Efa" firstAttribute="top" secondItem="xsM-r4-9xr" secondAttribute="top" id="nGc-nq-yLp"/>
+                            <constraint firstItem="ntt-2g-Efa" firstAttribute="leading" secondItem="EcN-ZM-DhT" secondAttribute="leading" id="qFI-yt-9TA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EcN-ZM-DhT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GHR-pz-CcO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840.57971014492762" y="110.49107142857143"/>
+        </scene>
     </scenes>
 </document>
