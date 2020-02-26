@@ -80,26 +80,31 @@ class LocateNycSchoolsController: UIViewController {
 }
 
 extension LocateNycSchoolsController: MKMapViewDelegate {
-//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+
+
+        guard let annotation = view.annotation else { return }
+
+       let school = nYcSchools.filter{ $0.schoolName == annotation.title}.first
+
+        guard let detailVC = storyboard?.instantiateViewController(identifier: "SchoolDetailViewController",creator: { coder in
+            return SchoolDetailViewController(coder: coder, school: school!)
+        }) else {
+           fatalError("could not downcast to SchoolDetailViewController")
+
+        }
+
+        detailVC.modalPresentationStyle = .popover
+        detailVC.modalTransitionStyle = .flipHorizontal
 //
+//        detailVC.schoolNameLabel.text = school?.schoolName
 //
-//        guard let annotation = view.annotation else { return }
-//
-//        guard let location = (Location.getLocations().filter { $0.title == annotation.title }).first else {return}
-//
-//        guard let detailVC = storyboard?.instantiateViewController(identifier: "LocationDetailController",creator: { coder in
-//            return LocationDetailController(coder: coder, location: location)
-//        }) else {
-//           fatalError("could not downcast to LocationDetailController")
-//
-//        }
-//
-//        detailVC.modalPresentationStyle = .popover
-//        detailVC.modalTransitionStyle = .flipHorizontal
-//        present(detailVC,animated: true)
-//
-//    }
-//    
+//        detailVC.overviewTextView.text = school?.overview
+        
+        present(detailVC,animated: true)
+
+    }
+    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else { return nil}

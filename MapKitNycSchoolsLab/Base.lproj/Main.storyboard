@@ -39,7 +39,7 @@
         <!--School Detail View Controller-->
         <scene sceneID="Unh-oh-oqH">
             <objects>
-                <viewController id="szH-gu-wkl" customClass="SchoolDetailViewController" customModule="MapKitNycSchoolsLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SchoolDetailViewController" id="szH-gu-wkl" customClass="SchoolDetailViewController" customModule="MapKitNycSchoolsLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xsM-r4-9xr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,6 +87,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EcN-ZM-DhT"/>
                     </view>
+                    <connections>
+                        <outlet property="overviewTextView" destination="Qep-6x-t8M" id="7Q9-eU-4VY"/>
+                        <outlet property="schoolNameLabel" destination="3Gv-6Q-z84" id="97x-Tx-MUL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHR-pz-CcO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
