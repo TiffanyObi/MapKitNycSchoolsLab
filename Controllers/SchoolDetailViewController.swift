@@ -18,6 +18,12 @@ class SchoolDetailViewController: UIViewController {
     
     @IBOutlet weak var schoolNameLabel: UILabel!
     
+    @IBOutlet weak var addressCityStateZipLabel: UILabel!
+    
+    @IBOutlet weak var boroughLabel: UILabel!
+    
+    @IBOutlet weak var schoolWebsiteLabel: UILabel!
+    
     
     init?(coder: NSCoder, school: NYCSchools) {
         self.school = school
@@ -36,9 +42,17 @@ class SchoolDetailViewController: UIViewController {
     
     func updateUI(with school: NYCSchools) {
         
-        schoolNameLabel.text = school.schoolName
+        schoolNameLabel.text =
+        school.schoolName
+        
+        addressCityStateZipLabel.text = "Address:  \(school.address) \n \(school.city), \(school.state) \n \(school.zip)"
+        
+        boroughLabel.text = "Borough: \(school.borough) "
+        
+        schoolWebsiteLabel.text = "School Website: \(school.website)"
         
         overviewTextView.text = school.overview
+        
         
         
     }

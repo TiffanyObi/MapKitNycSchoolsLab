@@ -48,6 +48,14 @@ class LocateNycSchoolsController: UIViewController {
             case .success(let schools):
                 DispatchQueue.main.async {
                     self?.nYcSchools = schools
+                    
+                    guard let regionCoordinate = self?.nYcSchools.first else { return }
+                    
+                    let latLongCenter = CLLocationCoordinate2D(latitude: Double(regionCoordinate.latitude)!, longitude: Double(regionCoordinate.longitude)!)
+                    
+                    let region = MKCoordinateRegion(center: latLongCenter, latitudinalMeters: 1600, longitudinalMeters: 1600)
+                    
+                    self?.mapView.setRegion(region, animated: true)
                 }
             }
         }
@@ -68,6 +76,8 @@ class LocateNycSchoolsController: UIViewController {
             let annotation  = MKPointAnnotation()
             annotation.title = school.schoolName
             annotation.coordinate = CLLocationCoordinate2DMake(Double(school.latitude)!, Double(school.longitude)!)
+            
+            
             
             annotations.append(annotation)
         }
